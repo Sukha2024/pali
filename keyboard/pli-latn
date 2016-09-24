@@ -1,0 +1,26 @@
+default  partial alphanumeric_keys
+xkb_symbols "basic" {
+
+    include "latin"
+
+    name[Group1]="Pali";
+
+    key <AD05>	{ [         t,          T,        U1E6D,        U1E6C ]	};
+    key <AD07>  { [         u,          U,        U016B,        U016A ] };
+    key <AD08>	{ [         i,          I,        U012B,        U012A ]	};
+
+    key <AC01>	{ [         a,          A,        U0101,       U0100  ]	};
+    key <AC03>  { [         d,          D,        U1E0D,       U1E0C  ] };
+    key <AC05>  { [         g,          G,        U1E45,        U1E44 ] };
+    key <AC06>	{ [         h,          H,        U1E47,        U1E46 ] };
+    key <AC09>  { [         l,          L,        U1E37,        U1E36 ] };
+
+    key <AB06>	{ [         n,          N,       U00F1,        U00D1  ]	};
+    key <AB07>	{ [         m,          M,       U1E43,        U1E42  ]	};
+    key <SPCE>	{ [     space,      space, nobreakspace, nobreakspace ]	};
+
+    include "kpdl(comma)"
+
+    include "level3(ralt_switch)"
+};
+

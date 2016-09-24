@@ -1,0 +1,19 @@
+To use the pli-latn keyboard layout simply:
+1. Copy the file into /usr/share/X11/xkb/symbols
+2. Add the line:
+   pli-latn        Pali
+   into these files:
+   /usr/share/X11/xkb/rules/base.lst
+   /usr/share/X11/xkb/rules/xorg.lst
+3. Restart the windowing system (usually just logging out and back in
+   should be enough.
+4. New keyboard layout should now be visible i your system. Different
+   window managers have different keyboard layout widgets - check there.
+5. If you still can't choose pali layout, remove xkb cache files
+   (backup them first, just in case!):
+   /var/lib/xkb/*.xkm
+
+   OR
+
+   On dpkg based systems (debian, ubuntu, etc.) you might try this instead:
+   sudo dpkg-reconfigure xkb-data
