@@ -1,0 +1,126 @@
+\newcommand{\xchapter}[2]{
+  \setcounter{chapter}{#1}
+  \setcounter{section}{0}
+  \chapter*{#2}
+  \chaptermark{#2}
+  \addcontentsline{toc}{chapter}{#1. #2}
+}
+
+\newcommand{\xchapterEnd}[1]{
+  \begin{center}
+    \chapter*{#1}
+  \end{center}
+  \vspace{7mm}
+}
+
+\newcommand{\xsectionEnd}[1]{
+  \begin{center}
+    \section*{#1}
+  \end{center}
+  \vspace{7mm}
+}
+
+\newcommand{\xsubsectionEnd}[1]{
+  \begin{center}
+    \subsection*{#1}
+  \end{center}
+  \vspace{7mm}
+}
+
+\newcommand{\xsubsubsectionEnd}[1]{
+  \begin{center}
+    \subsubsection{#1}
+  \end{center}
+  \vspace{7mm}
+}
+
+\newcommand{\xxsubsubsectionEnd}[1]{
+  \begin{center}
+    \subsubsection[x]{#1}
+  \end{center}
+  \vspace{7mm}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[b5paper,11pt,twoside,draft]{book}
+\usepackage{fontspec}
+\usepackage[a5paper]{geometry}
+\usepackage{polyglossia}
+\setdefaultlanguage{pali}
+
+%\usepackage{fancyhdr}
+\usepackage{hyphenat} %hyphenation at - : \hyp{}
+%Hyperlinks:
+\usepackage{hyperref}
+\hypersetup{pdftex,colorlinks=true,allcolors=blue,pdfpagemode=UseOutlines}
+\usepackage{hypcap}
+
+\overfullrule=1mm
+
+%\pretolerance=1500
+%\setlength{\emergencystretch}{2mm}
+%\setlength{\parskip}{0pt}
+%%%%%%%%%%%%%%%
+
+\title{Tipiṭaka \\ \vspace{2 mm} \large Suttapiṭaka}
+\begin{document}
+\maketitle
+
+\thispagestyle{empty}
+\cleardoublepage
+
+
+\vspace*{\fill}
+\textit{Namo tassa bhagavato arahato sammāsambuddhassa}
+
+\textit{Namo tassa bhagavato arahato sammāsambuddhassa}
+
+\textit{Namo tassa bhagavato arahato sammāsambuddhassa}
+\vspace*{\fill}
+
+\tableofcontents
+
+%Remove text number from Part pages:
+\makeatletter
+\renewcommand\part{
+  \if@openright
+  \cleardoublepage
+  \else
+  \clearpage
+  \fi
+  \thispagestyle{empty}
+  \if@twocolumn
+  \onecolumn
+  \@tempswatrue
+  \else
+  \@tempswafalse
+  \fi
+  \null\vfil
+  \secdef\@part\@spart}
+\makeatother
+
+\part*{Majjhimanikāyo}
+
+%\pagestyle{myheadings}
+
+\input{Mulapannasapali/Mulapannasapali.tex}
+
+%\input{Majjhimapannasapali/Majjhimapannasapali.tex}
+
+%\input{Uparipannasapali/Uparipannasapali.tex}
+
+
+
+% \newpage
+%\section{1. Brahmajālasuttaṃ}
+
+%\subsection{Paribbājakakathā}
+
+%\paragraph{1.}
+
+
+
+
+
+\end{document}
